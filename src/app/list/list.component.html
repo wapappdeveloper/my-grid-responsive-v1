@@ -1,0 +1,19 @@
+<div #container class="container-1" (window:resize)="resize()">
+    <div class="list" [style.width.px]="listWidth">
+        <div [style.borderWidth.px]="tileBorder" [style.width.px]="tileWidth" [style.height.px]="tileHeight" [style.margin.px]="tileMargin"
+            class="tile" *ngFor="let item of list;let i = index">
+            <div class="tile-title"><div class="triangle-bottomleft"></div>{{item.title}}</div>
+            <div class="center-text">{{item.id}}</div>
+            <div class="star" (dblclick)="hilightOrDehilightMe($event, item, i)" (click)="hilightOrDehilightMe($event, item, i)" [class.hilight]="item.hilight === 1" [class.hilight-gold]="item.hilight === 2" title="single click to like or unlike, double click to golden like"></div>
+            <div class="info-holder">
+                <div class="info" (click)="showInfo(item.heading, item.info)">info</div>
+            </div>
+            <hr class="line">
+            <div class="open-holder">
+                <div class="open" (click)="navigateToDetail(item.heading, item.detail)">open</div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-tools (emitter)="emitterValues($event)" [editMode]="editMode"></app-tools>
+<app-info *ngIf="infoPopup" [heading]="infoHeading" [content]="infoContent" (emitter)="emitter()"></app-info>

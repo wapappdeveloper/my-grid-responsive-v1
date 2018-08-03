@@ -1,0 +1,65 @@
+.container{
+    position: absolute;
+    /*right:0px;*/
+    right:-230px;
+    width:230px;
+    height:auto;
+    padding-top:5px;
+    background: rgba(0, 0, 0, 0.356);
+}
+label{
+    margin:10px 0px 5px 25px;
+    color:white;
+}
+label:nth-child(0){
+    margin-top:25px;
+}
+input{
+    position: relative;
+    width:calc(100% - 50px);
+    height:40px;
+    border:none;
+    outline: none;
+    padding:10px;
+    margin:5px 25px 10px 25px;
+    font-size:16px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+input[type="button"]{
+    cursor: pointer;
+    width:64px;
+    float:left;
+    font-size:12px;
+    font-weight: 600;
+}
+input[type="button"]:hover{
+    background: rgb(146, 255, 250);
+}
+input[type="button"]:active{
+    background: rgb(100, 187, 0);
+}
+.clear{
+    clear:both;
+}
+
+.open{
+    animation-name: openaction;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+.close{
+    animation-name: closeaction;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes openaction {
+    from {right:-232px}
+    to {right:0px}
+}
+
+@keyframes closeaction {
+    from {right:0px}
+    to {right:-232px}
+}

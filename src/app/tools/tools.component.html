@@ -1,0 +1,13 @@
+<div class="container" [class.open]="editMode" [class.close]="!editMode && editStarted" >
+  <form>
+    <label>Tile Width</label>
+    <input type="text" placeholder="width  in px" [(ngModel)]="width" name="width">
+    <label>Tile Height</label>
+    <input type="text" placeholder="height in px" [(ngModel)]="height" name="height">
+    <label>Tile Margin</label>
+    <input type="text" placeholder="margin in px" [(ngModel)]="margin" name="margin">
+    <input type="button" value="STORE" (click)="storeValues()">
+    <input type="button" value="UPDATE" (click)="updateValues()">
+    <div class="clear"></div>
+  </form>
+</div>
